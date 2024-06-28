@@ -1,0 +1,28 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Um\ piloto\ de\ motocross\ em\ uma\ motocicleta\ com\ uma\ jaqueta\ vermelha\ e\ capacete\ branco_\ _\ Vetor\ Premium.jpg');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .clock {
+            font-size: 48px;
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: rgb(0, 0, 0); /* Cambia el color del texto en la etiqueta <h3> a azul */
+        }
+        h3 {
+            color: rgb(0, 0, 0); /* Cambia el color del texto en la etiqueta <h4> a verde */
+        }
+    
+        

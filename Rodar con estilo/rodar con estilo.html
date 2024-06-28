@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Entrada</title>
+    <link rel="stylesheet" href="css de motos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .clock {
+            font-size: 90px;
+            text-align: center;
+            margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+        }
+
+        h4, h5 {
+            text-align: center;
+            margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+        }
+    </style>
+    <script>
+        function redirectToWhatsApp() {
+            const phoneNumber = '573196456890';  // Incluye el código de país sin el signo "+"
+            const currentDateTime = new Date();
+            const formattedDateTime = currentDateTime.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            const message = `Buen día, Llegué a la empresa a las ${formattedDateTime}`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Redirige a WhatsApp después de 30 segundos
+            setTimeout(function() {
+                window.location.href = whatsappUrl;
+            }, 30000); // Tiempo en milisegundos (30 segundos)
+
+            // Actualiza el reloj digital cada segundo
+            setInterval(function() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            }, 1000); // Actualiza cada segundo (1000 milisegundos)
+        }
+    </script>
+</head>
+<body onload="redirectToWhatsApp()">
+    <div class="clock" id="clock">Cargando reloj...</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <BR></BR><BR></BR><BR></BR><BR></BR>
+    <h2>Por favor tomar captura de pantalla de inmediato y cuando se abra WhatsApp enviarla</h2>
+    <h3>Redirigiendo a WhatsApp en 30 segundos...</h3>
+</body>
+</html>
